@@ -1,0 +1,17 @@
+Nova sprava pre vas
+====================
+
+Ahoj <%= @expert.name %>,
+
+niekto vas kontaktoval cez web Beriem Bitcoin:
+
+Od: <%= @submission.sender_name %>
+Email: <%= @submission.sender_email %>
+
+Sprava:
+<%= @submission.message %>
+
+---
+Odpovedat mozete priamo na tento email alebo na adresu <%= @submission.sender_email %>.
+
+Tato sprava bola odoslana z webu Beriem Bitcoin.

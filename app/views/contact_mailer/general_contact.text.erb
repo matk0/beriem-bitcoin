@@ -1,0 +1,15 @@
+Vseobecna kontaktna sprava
+===========================
+
+Niekto vas kontaktoval cez kontaktny formular:
+
+Od: <%= @submission.sender_name %>
+Email: <%= @submission.sender_email %>
+
+Sprava:
+<%= @submission.message %>
+
+---
+Odpovedat mozete priamo na adresu <%= @submission.sender_email %>.
+
+Tato sprava bola odoslana z webu Beriem Bitcoin.

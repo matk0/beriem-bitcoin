@@ -1,0 +1,53 @@
+<h1 class="text-2xl font-bold text-gray-900 mb-8"><%= t("admin.dashboard") %></h1>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+  <div class="bg-white p-6 rounded-lg shadow-sm">
+    <p class="text-sm text-gray-500 mb-1">Celkovo expertov</p>
+    <p class="text-3xl font-bold text-gray-900"><%= @experts_count %></p>
+  </div>
+  <div class="bg-white p-6 rounded-lg shadow-sm">
+    <p class="text-sm text-gray-500 mb-1">Aktivnych expertov</p>
+    <p class="text-3xl font-bold text-green-600"><%= @active_experts_count %></p>
+  </div>
+  <div class="bg-white p-6 rounded-lg shadow-sm">
+    <p class="text-sm text-gray-500 mb-1">Celkovo sprav</p>
+    <p class="text-3xl font-bold text-gray-900"><%= @submissions_count %></p>
+  </div>
+  <div class="bg-white p-6 rounded-lg shadow-sm">
+    <p class="text-sm text-gray-500 mb-1">Novych sprav</p>
+    <p class="text-3xl font-bold text-orange-500"><%= @new_submissions_count %></p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow-sm">
+  <div class="p-6 border-b">
+    <h2 class="text-lg font-semibold">Posledne spravy</h2>
+  </div>
+  <% if @recent_submissions.any? %>
+    <ul class="divide-y">
+      <% @recent_submissions.each do |submission| %>
+        <li class="p-4">
+          <%= link_to admin_contact_submission_path(submission), class: "block hover:bg-gray-50 -m-4 p-4" do %>
+            <div class="flex justify-between items-start">
+              <div>
+                <p class="font-medium text-gray-900"><%= submission.sender_name %></p>
+                <p class="text-sm text-gray-500"><%= submission.sender_email %></p>
+                <% if submission.expert %>
+                  <p class="text-sm text-orange-500">Pre: <%= submission.expert.name %></p>
+                <% end %>
+              </div>
+              <div class="text-right">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium <%= submission.status == 'new' ? 'bg-orange-100 text-orange-800' : 'bg-gray-100 text-gray-800' %>">
+                  <%= t("submission_status.#{submission.status}") %>
+                </span>
+                <p class="text-sm text-gray-500 mt-1"><%= l(submission.created_at, format: :short) %></p>
+              </div>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p class="p-6 text-gray-500">Zatial ziadne spravy.</p>
+  <% end %>
+</div>

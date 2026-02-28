@@ -1,0 +1,30 @@
+<%= form_with model: contact_submission, url: url, class: "space-y-6" do |form| %>
+  <% if contact_submission.errors.any? %>
+    <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-6">
+      <ul class="list-disc list-inside text-red-700">
+        <% contact_submission.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :sender_name, t("contact.name"), class: "block text-sm font-medium text-gray-700 mb-1" %>
+    <%= form.text_field :sender_name, class: "w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500", required: true %>
+  </div>
+
+  <div>
+    <%= form.label :sender_email, t("contact.email"), class: "block text-sm font-medium text-gray-700 mb-1" %>
+    <%= form.email_field :sender_email, class: "w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500", required: true %>
+  </div>
+
+  <div>
+    <%= form.label :message, t("contact.message"), class: "block text-sm font-medium text-gray-700 mb-1" %>
+    <%= form.text_area :message, rows: 6, class: "w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500", required: true %>
+  </div>
+
+  <div>
+    <%= form.submit t("contact.submit"), class: "w-full bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition cursor-pointer" %>
+  </div>
+<% end %>

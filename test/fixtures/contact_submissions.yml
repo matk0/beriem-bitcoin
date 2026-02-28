@@ -1,0 +1,20 @@
+one:
+  sender_name: Test User
+  sender_email: test@example.com
+  message: Hello, I would like to learn about Bitcoin payments.
+  expert: one
+  status: new
+
+two:
+  sender_name: Another User
+  sender_email: another@example.com
+  message: Can you help me set up Lightning?
+  expert: two
+  status: read
+
+general:
+  sender_name: General Contact
+  sender_email: general@example.com
+  message: General inquiry about your services.
+  expert:
+  status: new

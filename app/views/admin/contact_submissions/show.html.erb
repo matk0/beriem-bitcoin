@@ -1,0 +1,46 @@
+<div class="mb-6">
+  <%= link_to t("common.back"), admin_contact_submissions_path, class: "text-orange-500 hover:text-orange-600" %>
+</div>
+
+<div class="bg-white rounded-lg shadow-sm p-6">
+  <div class="flex justify-between items-start mb-6">
+    <div>
+      <h1 class="text-2xl font-bold text-gray-900 mb-1"><%= @submission.sender_name %></h1>
+      <p class="text-gray-500"><%= @submission.sender_email %></p>
+    </div>
+    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium <%= @submission.status == 'new' ? 'bg-orange-100 text-orange-800' : @submission.status == 'replied' ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800' %>">
+      <%= t("submission_status.#{@submission.status}") %>
+    </span>
+  </div>
+
+  <% if @submission.expert %>
+    <div class="mb-6 p-4 bg-gray-50 rounded-lg">
+      <p class="text-sm text-gray-500 mb-1">Pre experta:</p>
+      <%= link_to @submission.expert.name, admin_expert_path(@submission.expert), class: "text-orange-600 hover:text-orange-800 font-medium" %>
+    </div>
+  <% end %>
+
+  <div class="mb-6">
+    <p class="text-sm text-gray-500 mb-2">Sprava:</p>
+    <div class="prose max-w-none">
+      <%= simple_format(@submission.message) %>
+    </div>
+  </div>
+
+  <div class="text-sm text-gray-500 mb-6">
+    Prijate: <%= l(@submission.created_at, format: :long) %>
+  </div>
+
+  <div class="border-t pt-6">
+    <h3 class="text-lg font-medium text-gray-900 mb-4">Zmenit stav</h3>
+    <%= form_with model: [:admin, @submission], class: "flex items-center space-x-4" do |form| %>
+      <%= form.select :status, ContactSubmission::STATUSES.map { |s| [t("submission_status.#{s}"), s] }, {}, class: "px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500" %>
+      <%= form.submit t("common.save"), class: "bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition cursor-pointer" %>
+    <% end %>
+  </div>
+
+  <div class="border-t pt-6 mt-6">
+    <h3 class="text-lg font-medium text-gray-900 mb-4">Rychla odpoved</h3>
+    <p class="text-gray-600 mb-2">Odpovedat na: <%= mail_to @submission.sender_email, @submission.sender_email, class: "text-orange-600 hover:text-orange-800" %></p>
+  </div>
+</div>

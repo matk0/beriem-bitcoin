@@ -1,0 +1,53 @@
+<%= form_with model: [:admin, expert], class: "space-y-6" do |form| %>
+  <% if expert.errors.any? %>
+    <div class="bg-red-50 border-l-4 border-red-400 p-4">
+      <ul class="list-disc list-inside text-red-700">
+        <% expert.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div>
+      <%= form.label :name, t("activerecord.attributes.expert.name"), class: "block text-sm font-medium text-gray-700 mb-1" %>
+      <%= form.text_field :name, class: "w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500", required: true %>
+    </div>
+
+    <div>
+      <%= form.label :city, t("activerecord.attributes.expert.city"), class: "block text-sm font-medium text-gray-700 mb-1" %>
+      <%= form.text_field :city, class: "w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500", required: true %>
+    </div>
+  </div>
+
+  <div>
+    <%= form.label :email, t("activerecord.attributes.expert.email"), class: "block text-sm font-medium text-gray-700 mb-1" %>
+    <%= form.email_field :email, class: "w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500", required: true %>
+  </div>
+
+  <div>
+    <%= form.label :bio, t("activerecord.attributes.expert.bio"), class: "block text-sm font-medium text-gray-700 mb-1" %>
+    <%= form.text_area :bio, rows: 4, class: "w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500" %>
+  </div>
+
+  <div>
+    <%= form.label :photo, t("activerecord.attributes.expert.photo"), class: "block text-sm font-medium text-gray-700 mb-1" %>
+    <% if expert.photo.attached? %>
+      <div class="mb-2">
+        <%= image_tag expert.photo, class: "h-24 w-24 object-cover rounded-lg" %>
+      </div>
+    <% end %>
+    <%= form.file_field :photo, accept: "image/*", class: "block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-orange-50 file:text-orange-700 hover:file:bg-orange-100" %>
+  </div>
+
+  <div class="flex items-center">
+    <%= form.check_box :active, class: "h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded" %>
+    <%= form.label :active, t("activerecord.attributes.expert.active"), class: "ml-2 block text-sm text-gray-700" %>
+  </div>
+
+  <div class="flex justify-end space-x-4">
+    <%= link_to t("common.cancel"), admin_experts_path, class: "px-4 py-2 text-gray-700 hover:text-gray-900" %>
+    <%= form.submit t("common.save"), class: "bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition cursor-pointer" %>
+  </div>
+<% end %>

@@ -1,0 +1,22 @@
+<% content_for :title, t("nav.guides") %>
+
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <% if @content %>
+    <article class="prose prose-lg prose-orange max-w-none mb-12">
+      <%= @content[:body] %>
+    </article>
+  <% end %>
+
+  <% if @guides.present? %>
+    <div class="grid gap-6">
+      <% @guides.each do |guide| %>
+        <%= link_to navod_path(slug: guide[:slug]), class: "block bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition" do %>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2"><%= guide[:title] %></h3>
+          <% if guide[:description] %>
+            <p class="text-gray-600"><%= guide[:description] %></p>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

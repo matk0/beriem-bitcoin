@@ -1,0 +1,18 @@
+Nova kontaktna sprava
+======================
+
+Bola prijata nova kontaktna sprava:
+
+Od: <%= @submission.sender_name %>
+Email: <%= @submission.sender_email %>
+<% if @submission.expert %>
+Pre experta: <%= @submission.expert.name %>
+<% else %>
+Typ: Vseobecny kontakt
+<% end %>
+
+Sprava:
+<%= @submission.message %>
+
+---
+Tato sprava bola odoslana z webu Beriem Bitcoin.

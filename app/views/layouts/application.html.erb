@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <title><%= content_for(:title) || t("app_name") %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="description" content="<%= content_for(:description) || "Pomozeme vam prijimat Bitcoin platby vo vasom podniku" %>">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="min-h-screen flex flex-col bg-gray-50">
+    <nav class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex items-center">
+            <%= link_to root_path, class: "flex items-center space-x-2" do %>
+              <span class="font-semibold text-xl text-gray-900"><%= t("app_name") %></span>
+            <% end %>
+          </div>
+
+          <div class="hidden md:flex items-center space-x-6">
+            <%= link_to t("nav.faq"), faq_path, class: "text-gray-600 hover:text-orange-500 transition" %>
+            <%= link_to t("nav.guides"), navody_path, class: "text-gray-600 hover:text-orange-500 transition" %>
+            <%= link_to t("nav.experts"), experts_path, class: "text-gray-600 hover:text-orange-500 transition" %>
+          </div>
+
+          <div class="md:hidden flex items-center">
+            <button type="button" class="mobile-menu-button text-gray-600 hover:text-orange-500" aria-label="Menu">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="mobile-menu hidden md:hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
+          <%= link_to t("nav.bitcoin"), bitcoin_path, class: "block px-3 py-2 text-gray-600 hover:text-orange-500" %>
+          <%= link_to t("nav.faq"), faq_path, class: "block px-3 py-2 text-gray-600 hover:text-orange-500" %>
+          <%= link_to t("nav.guides"), navody_path, class: "block px-3 py-2 text-gray-600 hover:text-orange-500" %>
+          <%= link_to t("nav.experts"), experts_path, class: "block px-3 py-2 text-gray-600 hover:text-orange-500" %>
+        </div>
+      </div>
+    </nav>
+
+    <% if notice %>
+      <div class="bg-green-50 border-l-4 border-green-400 p-4">
+        <div class="max-w-7xl mx-auto flex">
+          <p class="text-green-700"><%= notice %></p>
+        </div>
+      </div>
+    <% end %>
+
+    <% if alert %>
+      <div class="bg-red-50 border-l-4 border-red-400 p-4">
+        <div class="max-w-7xl mx-auto flex">
+          <p class="text-red-700"><%= alert %></p>
+        </div>
+      </div>
+    <% end %>
+
+    <main class="flex-grow">
+      <%= yield %>
+    </main>
+
+    <footer class="bg-gray-800 text-white mt-auto">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-lg font-semibold mb-4"><%= t("app_name") %></h3>
+            <p class="text-gray-400">Pomahame podnikom na Slovensku prijimat Bitcoin platby.</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Odkazy</h3>
+            <ul class="space-y-2">
+              <li><%= link_to t("nav.bitcoin"), bitcoin_path, class: "text-gray-400 hover:text-white" %></li>
+              <li><%= link_to t("nav.experts"), experts_path, class: "text-gray-400 hover:text-white" %></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Kontakt</h3>
+            <p class="text-gray-400">info@beriembitcoin.sk</p>
+          </div>
+        </div>
+        <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+          <p>&copy; <%= Date.current.year %> <%= t("app_name") %>. Vsetky prava vyhradene.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.querySelector('.mobile-menu-button')?.addEventListener('click', function() {
+        document.querySelector('.mobile-menu').classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>

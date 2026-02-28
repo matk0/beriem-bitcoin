@@ -1,0 +1,143 @@
+sk:
+  # Application name
+  app_name: '₿eriem ₿itcoin'
+
+  # Navigation
+  nav:
+    home: 'Domov'
+    bitcoin: 'Cо je Bitcoin?'
+    lightning: 'Lightning Network'
+    faq: 'FAQ'
+    guides: 'Navody'
+    experts: 'Experti'
+    contact: 'Kontakt'
+    admin: 'Administracia'
+    login: 'Prihlasenie'
+    logout: 'Odhlasenie'
+
+  # Homepage
+  home:
+    hero_title: 'Prijimajte Bitcoin vo vasom podniku'
+    hero_subtitle: 'Pomozeme vam zacat prijimat platby v Bitcoin a Lightning Network'
+    cta_button: 'Zacat'
+    features:
+      fast: 'Rychle platby'
+      fast_desc: 'Lightning platby su okamzite'
+      cheap: 'Nizke poplatky'
+      cheap_desc: 'Zlomok nakladov oproti kartam'
+      global: 'Globalne'
+      global_desc: 'Prijimajte platby z celeho sveta'
+
+  # Experts
+  experts:
+    title: 'Bitcoin Experti'
+    subtitle: 'Najdite odbornika vo vasom meste'
+    filter_by_city: 'Filtrovat podla mesta'
+    all_cities: 'Vsetky mesta'
+    contact_expert: 'Kontaktovat experta'
+    no_experts: 'Zatial ziadni experti v tejto oblasti'
+
+  # Contact form
+  contact:
+    title: 'Kontaktujte nas'
+    name: 'Vase meno'
+    email: 'Vas email'
+    message: 'Sprava'
+    submit: 'Odoslat'
+    success: 'Sprava bola uspesne odoslana!'
+    error: 'Pri odosielani spravy doslo k chybe.'
+    expert_contact_title: 'Kontaktovat %{expert_name}'
+
+  # Admin
+  admin:
+    dashboard: 'Prehlad'
+    experts: 'Experti'
+    submissions: 'Spravy'
+    new_expert: 'Novy expert'
+    edit_expert: 'Upravit experta'
+    actions: 'Akcie'
+    edit: 'Upravit'
+    delete: 'Zmazat'
+    confirm_delete: 'Naozaj chcete zmazat?'
+    status: 'Stav'
+    created_at: 'Vytvorene'
+
+  # Form labels
+  activerecord:
+    models:
+      expert: 'Expert'
+      contact_submission: 'Kontaktna sprava'
+      admin: 'Administrator'
+    attributes:
+      expert:
+        name: 'Meno'
+        city: 'Mesto'
+        bio: 'O mne'
+        email: 'Email'
+        photo: 'Fotografia'
+        active: 'Aktivny'
+      contact_submission:
+        sender_name: 'Meno odosielatela'
+        sender_email: 'Email odosielatela'
+        message: 'Sprava'
+        status: 'Stav'
+    errors:
+      messages:
+        blank: 'nemoze byt prazdne'
+        invalid: 'je neplatne'
+        taken: 'uz existuje'
+
+  # Flash messages
+  flash:
+    expert_created: 'Expert bol uspesne vytvoreny'
+    expert_updated: 'Expert bol uspesne upraveny'
+    expert_deleted: 'Expert bol uspesne zmazany'
+    submission_updated: 'Sprava bola aktualizovana'
+
+  # Contact submission statuses
+  submission_status:
+    new: 'Nova'
+    read: 'Precitana'
+    replied: 'Zodpovedana'
+
+  # Common
+  common:
+    back: 'Spat'
+    save: 'Ulozit'
+    cancel: 'Zrusit'
+    search: 'Hladat'
+    loading: 'Nacitavam...'
+
+  # Date and time formats
+  date:
+    formats:
+      default: '%d.%m.%Y'
+      short: '%d.%m.'
+      long: '%d. %B %Y'
+    day_names:
+      - nedela
+      - pondelok
+      - utorok
+      - streda
+      - stvrtok
+      - piatok
+      - sobota
+    month_names:
+      - ~
+      - januar
+      - februar
+      - marec
+      - april
+      - maj
+      - jun
+      - jul
+      - august
+      - september
+      - oktober
+      - november
+      - december
+  time:
+    formats:
+      default: '%d.%m.%Y %H:%M'
+      short: '%d.%m. %H:%M'
+      long: '%d. %B %Y %H:%M'

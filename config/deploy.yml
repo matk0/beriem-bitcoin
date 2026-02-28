@@ -1,0 +1,74 @@
+# Beriem Bitcoin - Kamal Deployment Configuration
+# Update the placeholder values below before deploying
+
+# Name of your application
+service: beriem-bitcoin
+
+# Name of the container image
+image: matk0/beriem-bitcoin
+
+# Deploy to these servers (update with your VPS IP)
+servers:
+  web:
+    - 139.59.140.104
+
+# Enable SSL auto certification via Let's Encrypt
+proxy:
+  ssl: true
+  host: www.beriembitcoin.sk
+
+# Docker registry credentials
+registry:
+  # Using Docker Hub by default, change if using different registry
+  # server: ghcr.io
+  username:
+    - KAMAL_REGISTRY_USERNAME
+
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+# Environment variables for containers
+env:
+  secret:
+    - RAILS_MASTER_KEY
+    - ADMIN_EMAIL
+    - SMTP_ADDRESS
+    - SMTP_PORT
+    - SMTP_USERNAME
+    - SMTP_PASSWORD
+    - SMTP_DOMAIN
+  clear:
+    # Run Solid Queue inside Puma (single server setup)
+    SOLID_QUEUE_IN_PUMA: true
+
+    # Rails environment
+    RAILS_ENV: production
+
+    # Log level
+    RAILS_LOG_LEVEL: info
+
+    # Force SSL
+    RAILS_FORCE_SSL: true
+
+# Useful aliases
+aliases:
+  console: app exec --interactive --reuse "bin/rails console"
+  shell: app exec --interactive --reuse "bash"
+  logs: app logs -f
+  dbc: app exec --interactive --reuse "bin/rails dbconsole"
+
+# Persistent storage for SQLite and Active Storage
+volumes:
+  - 'beriem_bitcoin_storage:/rails/storage'
+
+# Bridge assets between deployments
+asset_path: /rails/public/assets
+
+# Build configuration
+builder:
+  arch: amd64
+  # For faster builds on M1/M2 Macs, uncomment remote builder:
+  # remote: ssh://docker@docker-builder-server
+# SSH configuration (uncomment if not using root)
+# ssh:
+#   user: deploy

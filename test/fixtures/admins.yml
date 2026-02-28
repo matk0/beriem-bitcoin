@@ -1,0 +1,3 @@
+admin:
+  email: admin@beriembitcoin.sk
+  encrypted_password: <%= Devise::Encryptor.digest(Admin, 'password123') %>

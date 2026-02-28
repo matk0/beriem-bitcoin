@@ -1,0 +1,20 @@
+one:
+  name: Peter Novak
+  city: Bratislava
+  bio: Bitcoin expert since 2015
+  email: peter@example.com
+  active: true
+
+two:
+  name: Jana Kovacova
+  city: Kosice
+  bio: IT consultant
+  email: jana@example.com
+  active: true
+
+inactive:
+  name: Inactive Expert
+  city: Bratislava
+  bio: Not currently available
+  email: inactive@example.com
+  active: false

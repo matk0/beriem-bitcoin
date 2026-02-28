@@ -1,0 +1,74 @@
+<% content_for :title, t("app_name") %>
+
+<div class="bg-gradient-to-br from-orange-500 to-amber-500 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+    <div class="text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6">
+        <%= t("home.hero_title") %>
+      </h1>
+      <p class="text-xl md:text-2xl mb-8 text-orange-100">
+        <%= t("home.hero_subtitle") %>
+      </p>
+      <%= link_to t("home.cta_button"), experts_path, class: "inline-block bg-white text-orange-500 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-orange-50 transition shadow-lg" %>
+    </div>
+  </div>
+</div>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center">
+      <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      </div>
+      <h3 class="text-xl font-semibold mb-2"><%= t("home.features.fast") %></h3>
+      <p class="text-gray-600"><%= t("home.features.fast_desc") %></p>
+    </div>
+
+    <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center">
+      <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+      <h3 class="text-xl font-semibold mb-2"><%= t("home.features.cheap") %></h3>
+      <p class="text-gray-600"><%= t("home.features.cheap_desc") %></p>
+    </div>
+
+    <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center">
+      <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+      <h3 class="text-xl font-semibold mb-2"><%= t("home.features.global") %></h3>
+      <p class="text-gray-600"><%= t("home.features.global_desc") %></p>
+    </div>
+  </div>
+</div>
+
+<div class="bg-gray-100 py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900">Ako zacat?</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+        <h3 class="text-lg font-semibold mb-2">Precitajte si navody</h3>
+        <p class="text-gray-600">Ziskajte zakladne informacie o Bitcoin a Lightning platbach.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+        <h3 class="text-lg font-semibold mb-2">Najdite experta</h3>
+        <p class="text-gray-600">Kontaktujte odbornika vo vasom meste pre osobnu pomoc.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+        <h3 class="text-lg font-semibold mb-2">Zacnite prijimat platby</h3>
+        <p class="text-gray-600">Nastavte si system a prijmite prvu Bitcoin platbu.</p>
+      </div>
+    </div>
+  </div>
+</div>

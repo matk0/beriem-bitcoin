@@ -1,0 +1,44 @@
+<div class="flex justify-between items-center mb-8">
+  <h1 class="text-2xl font-bold text-gray-900"><%= @expert.name %></h1>
+  <%= link_to t("admin.edit"), edit_admin_expert_path(@expert), class: "bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition" %>
+</div>
+
+<div class="bg-white rounded-lg shadow-sm p-6">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="md:col-span-1">
+      <% if @expert.photo.attached? %>
+        <%= image_tag @expert.photo, class: "w-full rounded-lg" %>
+      <% else %>
+        <div class="w-full aspect-square bg-gradient-to-br from-orange-400 to-amber-500 rounded-lg flex items-center justify-center">
+          <span class="text-6xl font-bold text-white"><%= @expert.name.first.upcase %></span>
+        </div>
+      <% end %>
+    </div>
+    <div class="md:col-span-2">
+      <dl class="space-y-4">
+        <div>
+          <dt class="text-sm font-medium text-gray-500"><%= t("activerecord.attributes.expert.city") %></dt>
+          <dd class="mt-1 text-lg text-gray-900"><%= @expert.city %></dd>
+        </div>
+        <div>
+          <dt class="text-sm font-medium text-gray-500"><%= t("activerecord.attributes.expert.email") %></dt>
+          <dd class="mt-1 text-lg text-gray-900"><%= @expert.email %></dd>
+        </div>
+        <div>
+          <dt class="text-sm font-medium text-gray-500"><%= t("admin.status") %></dt>
+          <dd class="mt-1">
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium <%= @expert.active? ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800' %>">
+              <%= @expert.active? ? 'Aktivny' : 'Neaktivny' %>
+            </span>
+          </dd>
+        </div>
+        <% if @expert.bio.present? %>
+          <div>
+            <dt class="text-sm font-medium text-gray-500"><%= t("activerecord.attributes.expert.bio") %></dt>
+            <dd class="mt-1 text-gray-900"><%= simple_format(@expert.bio) %></dd>
+          </div>
+        <% end %>
+      </dl>
+    </div>
+  </div>
+</div>

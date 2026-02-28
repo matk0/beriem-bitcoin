@@ -1,0 +1,7 @@
+<% content_for :title, t("contact.title") %>
+
+<div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <h1 class="text-3xl font-bold text-gray-900 mb-8"><%= t("contact.title") %></h1>
+
+  <%= render "contact_submissions/form", contact_submission: @contact_submission, url: contact_submissions_path %>
+</div>
