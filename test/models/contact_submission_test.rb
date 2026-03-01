@@ -16,7 +16,7 @@ class ContactSubmissionTest < ActiveSupport::TestCase
       message: "Test message"
     )
     assert_not submission.valid?
-    assert_includes submission.errors[:sender_name], "nemoze byt prazdne"
+    assert_includes submission.errors[:sender_name], "nemôže byť prázdne"
   end
 
   test "requires sender_email" do
@@ -25,7 +25,7 @@ class ContactSubmissionTest < ActiveSupport::TestCase
       message: "Test message"
     )
     assert_not submission.valid?
-    assert_includes submission.errors[:sender_email], "nemoze byt prazdne"
+    assert_includes submission.errors[:sender_email], "nemôže byť prázdne"
   end
 
   test "requires message" do
@@ -34,7 +34,7 @@ class ContactSubmissionTest < ActiveSupport::TestCase
       sender_email: "test@example.com"
     )
     assert_not submission.valid?
-    assert_includes submission.errors[:message], "nemoze byt prazdne"
+    assert_includes submission.errors[:message], "nemôže byť prázdne"
   end
 
   test "validates email format" do
@@ -44,7 +44,7 @@ class ContactSubmissionTest < ActiveSupport::TestCase
       message: "Test message"
     )
     assert_not submission.valid?
-    assert_includes submission.errors[:sender_email], "je neplatne"
+    assert_includes submission.errors[:sender_email], "je neplatné"
   end
 
   test "expert association is optional" do

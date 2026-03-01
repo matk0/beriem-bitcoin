@@ -28,9 +28,9 @@ ENV RAILS_ENV="production" \
 # Throw-away build stage to reduce size of final image
 FROM base AS build
 
-# Install packages needed to build gems
+# Install packages needed to build gems and Node.js for Tailwind
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libyaml-dev pkg-config && \
+    apt-get install --no-install-recommends -y build-essential git libyaml-dev pkg-config nodejs npm && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Install application gems
@@ -42,10 +42,15 @@ RUN bundle install && \
 # Copy application code
 COPY . .
 
+# Install npm dependencies for Tailwind CSS
+RUN npm install
+
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile app/ lib/
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
+# Use npm-installed Tailwind CLI instead of standalone binary (fixes arm64->amd64 cross-compilation)
+ENV TAILWINDCSS_INSTALL_DIR=/rails/node_modules/.bin
 RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 
 

@@ -13,25 +13,25 @@ class ExpertTest < ActiveSupport::TestCase
   test "requires name" do
     expert = Expert.new(city: "Bratislava", email: "test@example.com")
     assert_not expert.valid?
-    assert_includes expert.errors[:name], "nemoze byt prazdne"
+    assert_includes expert.errors[:name], "nemôže byť prázdne"
   end
 
   test "requires city" do
     expert = Expert.new(name: "Test", email: "test@example.com")
     assert_not expert.valid?
-    assert_includes expert.errors[:city], "nemoze byt prazdne"
+    assert_includes expert.errors[:city], "nemôže byť prázdne"
   end
 
   test "requires email" do
     expert = Expert.new(name: "Test", city: "Bratislava")
     assert_not expert.valid?
-    assert_includes expert.errors[:email], "nemoze byt prazdne"
+    assert_includes expert.errors[:email], "nemôže byť prázdne"
   end
 
   test "validates email format" do
     expert = Expert.new(name: "Test", city: "Bratislava", email: "invalid")
     assert_not expert.valid?
-    assert_includes expert.errors[:email], "je neplatne"
+    assert_includes expert.errors[:email], "je neplatné"
   end
 
   test "active scope returns only active experts" do
