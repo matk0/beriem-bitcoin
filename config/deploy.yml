@@ -15,7 +15,11 @@ servers:
 # Enable SSL auto certification via Let's Encrypt
 proxy:
   ssl: true
-  host: www.beriembitcoin.sk
+  hosts:
+    - www.beriembitcoin.sk
+    - beriembitcoin.sk
+    - www.beriembitkojn.sk
+    - beriembitkojn.sk
 
 # Docker registry credentials
 registry:

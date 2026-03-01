@@ -5,108 +5,108 @@ sk:
   # Navigation
   nav:
     home: 'Domov'
-    bitcoin: 'Cо je Bitcoin?'
+    bitcoin: 'Čo je Bitcoin?'
     lightning: 'Lightning Network'
     faq: 'FAQ'
-    guides: 'Navody'
+    guides: 'Návody'
     experts: 'Experti'
     contact: 'Kontakt'
-    admin: 'Administracia'
-    login: 'Prihlasenie'
-    logout: 'Odhlasenie'
+    admin: 'Administrácia'
+    login: 'Prihlásenie'
+    logout: 'Odhlásenie'
 
   # Homepage
   home:
-    hero_title: 'Prijimajte Bitcoin vo vasom podniku'
-    hero_subtitle: 'Pomozeme vam zacat prijimat platby v Bitcoin a Lightning Network'
-    cta_button: 'Zacat'
+    hero_title: 'Prijímajte Bitcoin vo Vašom podniku'
+    hero_subtitle: 'Pomôžeme Vám začať prijímať platby v Bitcoine'
+    cta_button: 'Začať'
     features:
-      fast: 'Rychle platby'
-      fast_desc: 'Lightning platby su okamzite'
-      cheap: 'Nizke poplatky'
-      cheap_desc: 'Zlomok nakladov oproti kartam'
-      global: 'Globalne'
-      global_desc: 'Prijimajte platby z celeho sveta'
+      fast: 'Rýchle platby'
+      fast_desc: 'Lightning platby sú okamžité'
+      cheap: 'Nízke poplatky'
+      cheap_desc: 'Zlomok nákladov oproti kartám'
+      global: 'Globálne'
+      global_desc: 'Prijímajte platby z celého sveta'
 
   # Experts
   experts:
-    title: 'Bitcoin Experti'
-    subtitle: 'Najdite odbornika vo vasom meste'
-    filter_by_city: 'Filtrovat podla mesta'
-    all_cities: 'Vsetky mesta'
-    contact_expert: 'Kontaktovat experta'
-    no_experts: 'Zatial ziadni experti v tejto oblasti'
+    title: 'Bitcoin experti'
+    subtitle: 'Nájdite odborníka vo vašom meste'
+    filter_by_city: 'Filtrovať podľa mesta'
+    all_cities: 'Všetky mestá'
+    contact_expert: 'Kontaktovať experta'
+    no_experts: 'Zatiaľ žiadni experti v tejto oblasti'
 
   # Contact form
   contact:
-    title: 'Kontaktujte nas'
-    name: 'Vase meno'
-    email: 'Vas email'
-    message: 'Sprava'
-    submit: 'Odoslat'
-    success: 'Sprava bola uspesne odoslana!'
-    error: 'Pri odosielani spravy doslo k chybe.'
-    expert_contact_title: 'Kontaktovat %{expert_name}'
+    title: 'Kontaktujte nás'
+    name: 'Vaše meno'
+    email: 'Váš e-mail'
+    message: 'Správa'
+    submit: 'Odoslať'
+    success: 'Správa bola úspešne odoslaná!'
+    error: 'Pri odosielaní správy došlo k chybe.'
+    expert_contact_title: 'Kontaktovať %{expert_name}'
 
   # Admin
   admin:
-    dashboard: 'Prehlad'
+    dashboard: 'Prehľad'
     experts: 'Experti'
-    submissions: 'Spravy'
-    new_expert: 'Novy expert'
-    edit_expert: 'Upravit experta'
+    submissions: 'Správy'
+    new_expert: 'Nový expert'
+    edit_expert: 'Upraviť experta'
     actions: 'Akcie'
-    edit: 'Upravit'
-    delete: 'Zmazat'
-    confirm_delete: 'Naozaj chcete zmazat?'
+    edit: 'Upraviť'
+    delete: 'Zmazať'
+    confirm_delete: 'Naozaj chcete zmazať?'
     status: 'Stav'
-    created_at: 'Vytvorene'
+    created_at: 'Vytvorené'
 
   # Form labels
   activerecord:
     models:
       expert: 'Expert'
-      contact_submission: 'Kontaktna sprava'
-      admin: 'Administrator'
+      contact_submission: 'Kontaktná správa'
+      admin: 'Administrátor'
     attributes:
       expert:
         name: 'Meno'
         city: 'Mesto'
         bio: 'O mne'
-        email: 'Email'
+        email: 'E-mail'
         photo: 'Fotografia'
-        active: 'Aktivny'
+        active: 'Aktívny'
       contact_submission:
-        sender_name: 'Meno odosielatela'
-        sender_email: 'Email odosielatela'
-        message: 'Sprava'
+        sender_name: 'Meno odosielateľa'
+        sender_email: 'E-mail odosielateľa'
+        message: 'Správa'
         status: 'Stav'
     errors:
       messages:
-        blank: 'nemoze byt prazdne'
-        invalid: 'je neplatne'
-        taken: 'uz existuje'
+        blank: 'nemôže byť prázdne'
+        invalid: 'je neplatné'
+        taken: 'už existuje'
 
   # Flash messages
   flash:
-    expert_created: 'Expert bol uspesne vytvoreny'
-    expert_updated: 'Expert bol uspesne upraveny'
-    expert_deleted: 'Expert bol uspesne zmazany'
-    submission_updated: 'Sprava bola aktualizovana'
+    expert_created: 'Expert bol úspešne vytvorený'
+    expert_updated: 'Expert bol úspešne upravený'
+    expert_deleted: 'Expert bol úspešne zmazaný'
+    submission_updated: 'Správa bola aktualizovaná'
 
   # Contact submission statuses
   submission_status:
-    new: 'Nova'
-    read: 'Precitana'
-    replied: 'Zodpovedana'
+    new: 'Nová'
+    read: 'Prečítaná'
+    replied: 'Zodpovedaná'
 
   # Common
   common:
-    back: 'Spat'
-    save: 'Ulozit'
-    cancel: 'Zrusit'
-    search: 'Hladat'
-    loading: 'Nacitavam...'
+    back: 'Späť'
+    save: 'Uložiť'
+    cancel: 'Zrušiť'
+    search: 'Hľadať'
+    loading: 'Načítavam...'
 
   # Date and time formats
   date:
@@ -115,25 +115,25 @@ sk:
       short: '%d.%m.'
       long: '%d. %B %Y'
     day_names:
-      - nedela
+      - nedeľa
       - pondelok
       - utorok
       - streda
-      - stvrtok
+      - štvrtok
       - piatok
       - sobota
     month_names:
       - ~
-      - januar
-      - februar
+      - január
+      - február
       - marec
-      - april
-      - maj
-      - jun
-      - jul
+      - apríl
+      - máj
+      - jún
+      - júl
       - august
       - september
-      - oktober
+      - október
       - november
       - december
   time:
