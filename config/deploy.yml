@@ -21,8 +21,7 @@ proxy:
 registry:
   # Using Docker Hub by default, change if using different registry
   # server: ghcr.io
-  username:
-    - KAMAL_REGISTRY_USERNAME
+  username: matk0
 
   password:
     - KAMAL_REGISTRY_PASSWORD

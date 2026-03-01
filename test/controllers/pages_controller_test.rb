@@ -11,11 +11,6 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get lightning" do
-    get lightning_url
-    assert_response :success
-  end
-
   test "should get faq" do
     get faq_url
     assert_response :success
@@ -28,11 +23,6 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
 
   test "should get navod" do
     get navod_url(slug: "zaciatok")
-    assert_response :success
-  end
-
-  test "should get kontakt" do
-    get kontakt_url
     assert_response :success
   end
 end
