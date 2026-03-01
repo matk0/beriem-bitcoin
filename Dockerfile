@@ -30,7 +30,7 @@ FROM base AS build
 
 # Install packages needed to build gems and Node.js for Tailwind
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libyaml-dev pkg-config nodejs npm && \
+    apt-get install --no-install-recommends -y build-essential git libsqlite3-dev libyaml-dev pkg-config nodejs npm && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Install application gems
