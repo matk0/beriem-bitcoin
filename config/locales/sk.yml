@@ -2,6 +2,31 @@ sk:
   # Application name
   app_name: '₿eriem ₿itcoin'
 
+  # Devise
+  devise:
+    sessions:
+      new:
+        sign_in: 'Prihlásenie'
+        remember_me: 'Zapamätať si ma'
+      signed_in: 'Úspešne ste sa prihlásili.'
+      signed_out: 'Úspešne ste sa odhlásili.'
+      already_signed_out: 'Úspešne ste sa odhlásili.'
+    passwords:
+      new:
+        forgot_your_password: 'Zabudli ste heslo?'
+        send_instructions: 'Odoslať inštrukcie'
+      edit:
+        change_password: 'Zmeniť heslo'
+        new_password: 'Nové heslo'
+        confirm_password: 'Potvrďte heslo'
+        update: 'Aktualizovať heslo'
+      send_instructions: 'Za niekoľko minút dostanete e-mail s inštrukciami na obnovu hesla.'
+      updated: 'Vaše heslo bolo úspešne zmenené.'
+    failure:
+      invalid: 'Neplatný e-mail alebo heslo.'
+      unauthenticated: 'Pre pokračovanie sa musíte prihlásiť.'
+      not_found_in_database: 'Neplatný e-mail alebo heslo.'
+
   # Navigation
   nav:
     home: 'Domov'
@@ -68,6 +93,11 @@ sk:
       expert: 'Expert'
       contact_submission: 'Kontaktná správa'
       admin: 'Administrátor'
+    attributes:
+      admin:
+        email: 'E-mail'
+        password: 'Heslo'
+        remember_me: 'Zapamätať si ma'
     attributes:
       expert:
         name: 'Meno'
