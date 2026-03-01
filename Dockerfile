@@ -42,8 +42,8 @@ RUN bundle install && \
 # Copy application code
 COPY . .
 
-# Install npm dependencies for Tailwind CSS
-RUN npm install
+# Install npm dependencies for Tailwind CSS (fresh install for Linux platform)
+RUN rm -rf node_modules package-lock.json && npm install
 
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile app/ lib/
